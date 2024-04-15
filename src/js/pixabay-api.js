@@ -4,7 +4,7 @@ axios.defaults.baseURL = 'https://pixabay.com/api/';
 
 // axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 
-export async function requestToServer(query, page) {
+export async function requestToServer(query, page, perPage) {
   const API_KEY = '43354074-012c59d6306474dc1e40056e0';
 
   const response = await axios({
@@ -14,7 +14,7 @@ export async function requestToServer(query, page) {
       orientation: 'horizontal',
       safesearch: true,
       key: API_KEY,
-      per_page: 15,
+      per_page: perPage,
       page,
     },
   });

@@ -133,7 +133,6 @@ div.sl-wrapper .sl-image .sl-caption {
 }
 
 .loader {
-  display: inline-block;
   width: 48px;
   height: 48px;
   border-radius: 50%;
