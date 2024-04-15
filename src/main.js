@@ -74,7 +74,6 @@ function photoUploadMore() {
   page++;
   requestToServer(searchQuery, page)
     .then(response => {
-
       loaderEl.classList.remove('is-hidden');
 
       galleryList.insertAdjacentHTML(
@@ -82,15 +81,17 @@ function photoUploadMore() {
         renderCard(response.data.hits)
       );
 
-      const { height: cardHeight } = document.querySelector('.gallery').firstElementChild.getBoundingClientRect();
+      const { height: cardHeight } = document
+        .querySelector('.gallery')
+        .firstElementChild.getBoundingClientRect();
 
       window.scrollBy({
         top: cardHeight * 3,
         behavior: 'smooth',
       });
-console.log(response.data.total);
- const lastPage = Math.ceil(response.data.totalHits / 15);
-    if (lastPage === page) {
+
+      const lastPage = Math.ceil(response.data.totalHits / 15);
+      if (lastPage === page) {
         iziToast.error({
           iconUrl: error,
 
@@ -111,7 +112,6 @@ console.log(response.data.total);
       }
 
       loaderEl.classList.add('is-hidden');
-    
     })
     .catch(console.log());
 }
