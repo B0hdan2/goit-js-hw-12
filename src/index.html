@@ -5,20 +5,35 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla App Template</title>
+    <!-- normalize -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+    />
+
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <load ="partials/header.html" />
+    <div class="container">
+      <form class="form">
+        <input
+          class="form__input"
+          type="text"
+          name="search"
+          placeholder="Search images..."
+          required
+        />
+        <button class="button" type="submit">search</button>
+      </form>
 
-    <section>
-      <h1>Example page title</h1>
-      <!-- Path to images as from index.html file -->
-      <img src="./img/javascript.svg" alt="" />
-    </section>
+      <ul class="gallery"></ul>
+      <div class="loader is-hidden"></div>
+      <button class="button is-hidden js-button-more" type="button">Load more</button>
 
-    <!-- Loads the specified .html file -->
-    <load ="partials/vite-promo.html" />
+
+    </div>
 
     <script type="module" src="./main.js"></script>
+    <script type="module" src="./js/pixabay-api.js"></script>
   </body>
 </html>
