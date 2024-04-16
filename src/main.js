@@ -81,7 +81,7 @@ async function onSubmit(event) {
 
   page = 1;
   try {
-    const { data } = await requestToServer(searchQuery, page, 20);
+    const { data } = await requestToServer(searchQuery, page);
 
     if (searchQuery === '' || data.hits.length === 0) {
       iziToast.error({
@@ -168,7 +168,7 @@ async function photoUploadMore() {
   page++;
 
   try {
-    const { data } = await requestToServer(searchQuery, page, 15);
+    const { data } = await requestToServer(searchQuery, page);
 
     galleryList.insertAdjacentHTML('beforeend', renderCard(data.hits));
 
