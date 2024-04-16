@@ -22,7 +22,7 @@ let page = 1;
 let searchQuery = null;
 
 formEl.addEventListener('submit', onSubmit);
-buttonLoadMore.addEventListener('click', photoUploadMore);
+
 
 //  function onSubmit(event) {
 //   event.preventDefault();
@@ -74,6 +74,7 @@ async function onSubmit(event) {
 
   searchQuery = event.currentTarget.elements.search.value.trim();
 
+  buttonLoadMore.addEventListener('click', photoUploadMore);
   buttonLoadMore.classList.add('is-hidden');
   loaderEl.classList.remove('is-hidden');
   galleryList.innerHTML = '';
