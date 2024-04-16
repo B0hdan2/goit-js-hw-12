@@ -108,6 +108,7 @@ async function onSubmit(event) {
     if (data.totalHits > 15) {
       buttonLoadMore.classList.remove('is-hidden');
     }
+    formEl.reset()
   } catch (error) {
     console.log(error);
   }
